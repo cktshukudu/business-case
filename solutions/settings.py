@@ -55,7 +55,7 @@ ROOT_URLCONF = 'solutions.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\user\business\solutions\btamplate\templates'],
+        'DIRS': [r'C:\Users\cash\business-case\btamplate\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
