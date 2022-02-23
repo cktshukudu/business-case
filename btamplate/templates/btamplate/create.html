@@ -1,57 +1,14 @@
 {% extends 'btamplate/base.html'%}
 
+{% load crispy_forms_tags %}
+
 {% block title %} Create New Template {% endblock %}
 
 {% block content %}<h6> Generate Business Case </h6>
-<form method="post" action="/create/">
+<form method="post" action="">
     {% csrf_token %}
-    {{form.as_p}}
-    <h6>WHO?<br>Stakeholder Identification and Engagement Project Responsibility</h6>
-    <p><label for="id_sponsor">Sponsor(s):</label>
-                <input id="id_sponsor" type="text" name="sponsor" maxlength="200" required></p>
-    <p><label for="id_manager">Manager:</label>
-                <input id="id_manager" type="text" name="Manager" maxlength="200" required></p>
-    <p><label for="id_istake">Internal Stakeholder:</label>
-                <input id="id_istake" type="text" name="istakeholder" maxlength="200" required></p>
-    <p><label for="id_exstake">External Stakeholder:</label>
-                <input id="id_exstake" type="text" name="estakeholder" maxlength="200" required></p>
-    <h6>WHY?<br>Demonstrate the Project Relevance</h6>
-    <p><label for="id_project">Need for the Project:</label>
-        <input id="id_project" type="text" name="Project" maxlength="200" required></p>
-    <p><label for="id_aligment">Alignment with Business Priorities:</label>
-            <input id="id_aligment" type="text" name="alignment" maxlength="200" required></p>
-    <h6>HOW?<br>The Solution</h6>
-    <p><label for="id_solution">Proposed Solution or Methodology:</label>
-            <input id="id_solution" type="text" name="solution" maxlength="200" required></p>
-    <h6>WHAT?<br>Relevant Business Area to be impacted and Project Risks</h6>
-    <p><label for="id_area">Impacted Business Function or Area:</label>
-        <input id="id_area" type="text" name="area" maxlength="200" required></p>
-    <p><label for="id_risk">Indicative Risk Level of the Project:</label>
-        <input id="id_risk" type="text" name="risk" maxlength="200" required></p>
-    <h6>WHEN?<br>Project Timeframe</h6>
-    <p><label for="id_start">Proposed Start Date:</label>
-        <input type="date" id="id_start" name="start" value="2022-01-22"
-        min="2000-01-01" max="2031-12-31"></p>
-    <p><label for="id_overall">Overall Project Timeframe:</label>
-         <input type="date" id="id_overall" name="Overall" value="2022-01-22"
-            min="2000-01-01" max="2031-12-31"></p>
-    <p><label for="id_completion">Estimated completion Date:</label>
-        <input type="date" id="id_completion" name="completion" value="2022-01-22"
-                min="2000-01-01" max="2031-12-31"></p>
-    <h6>WHERE?<br>
-        Project Location</h6>
-    <p><label for="id_location">Location of Project Implementation:</label>
-        <input id="id_location" type="text" name="Location" maxlength="200" required></p>
-    <h6>HOW MUCH?<br>
-        Project costs, Benefits and Risks of doing nothing        
-            </h6>
-    <p><label for="id_cost">Approximate costs of the Project:</label>
-        <input id="id_cost" type="text" name="costs" maxlength="200" required></p>
-    <p><label for="id_estimate">Estimate Benefits(Financial or Non-Financial):</label>
-        <input id="id_estimate" type="text" name="Estimate" maxlength="200" required></p>
-    <p><label for="id_impact">Impact/Risks of doing nothing(Financial or Non-Financial):</label>
-        <input id="id_impact" type="text" name="Impact" maxlength="200" required></p>
-    <button type="submit", name="save">Save</button>
+    {{form|crispy}}
+    <button type="submit" name="save">Save</button>
 </form>
 
 {% endblock %}
