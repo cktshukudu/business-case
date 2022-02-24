@@ -3,9 +3,15 @@ from multiprocessing import Manager, managers
 from tabnanny import check
 from unicodedata import name
 from django import forms
-from django import forms
 
-
+class BasicForm(forms.Form):
+    company_email_address = forms.EmailField()
+    phone_number = forms.CharField(label='Phone')
+    company_size = forms.CharField()
+    office_adress = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())
+    confirm_password = forms.CharField(widget=forms.PasswordInput())
+    
 
 class CreateNewList(forms.Form):
     name = forms.CharField(label="Project Name:", max_length=200)
