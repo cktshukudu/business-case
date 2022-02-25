@@ -1,16 +1,13 @@
-from ctypes import alignment
-from multiprocessing import Manager, managers
-from tabnanny import check
-from unicodedata import name
-from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 from django import forms
 
 
 
 class CreateNewList(forms.Form):
-    name = forms.CharField(label="Project Name:", max_length=200)
+    Project_Name = forms.CharField(max_length=200)
     pro_date= forms.DateField(label='Business Case Proposal Date', widget=forms.SelectDateWidget)
-    sponsor = forms.CharField(widget=forms.TextInput(attrs={'title':"id_sponsor","id":"id_sponsor",'size':'60','maxlength':'200'} ))
+    sponsor = forms.CharField(widget=forms.TextInput(attrs={'title':"id_sponsor","id":"id_sponsor",'size':'10','maxlength':'200'} ))
     manager = forms.CharField(widget=forms.TextInput(attrs={'title':"id_manager","id":"id_manager",'size':'60','maxlength':'200'} ))
     internal_stakeholder = forms.CharField(widget=forms.TextInput(attrs={'title':"id_internal","id":"id_internal",'size':'60','maxlength':'200'} ))
     external_stakeholder = forms.CharField(widget=forms.TextInput(attrs={'title':"id_external","id":"id_external",'size':'60','maxlength':'200'} ))
@@ -26,4 +23,3 @@ class CreateNewList(forms.Form):
     Approximate_costs_of_the_Project = forms.CharField(widget=forms.TextInput(attrs={'title':"id_costs","id":"id_costs",'size':'60','maxlength':'200'} ))
     estimate = forms.CharField(label="Estimate Benefits(Financial or Non-Financial):", max_length=200)
     impact = forms.CharField(label="Impact/Risks of doing nothing(Financial or Non-Financial):", max_length=200)
-    
