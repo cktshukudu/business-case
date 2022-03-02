@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from btamplate import views
 
 
 urlpatterns = [
-    path('btamplate/', include('btamplate.urls')),
     path('admin/', admin.site.urls),
+    path('btamplate/', include('btamplate.urls')),
+    
 ]
 

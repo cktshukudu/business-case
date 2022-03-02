@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap_icons',
+    'bootstrap_datepicker_plus',
     'btamplate',
     'crispy_forms',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -57,18 +61,21 @@ ROOT_URLCONF = 'solutions.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\user\business\solutions\btamplate\templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.static',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 WSGI_APPLICATION = 'solutions.wsgi.application'
 
@@ -123,8 +130,10 @@ USE_TZ = True
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/solutions/btamplate/static',
+]
 STATIC_URL = 'static/'
 
 

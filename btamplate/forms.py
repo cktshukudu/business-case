@@ -1,12 +1,22 @@
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
 from django import forms
+from django.forms.widgets import NumberInput
 
+class RegisterForm(forms.Form):
+    company_email_address = forms.EmailField()
+    phone_number = forms.CharField(label='Phone')
+    company_number = forms.CharField()
+    office_adress = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())
+    confirm_password = forms.CharField(widget=forms.PasswordInput())
 
+class LoginForm(forms.Form):
+    company_number = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())
 
 class CreateNewList(forms.Form):
-    Project_Name = forms.CharField(max_length=200)
-    pro_date= forms.DateField(label='Business Case Proposal Date', widget=forms.SelectDateWidget)
+    Project_name = forms.CharField(max_length=200)
+    Business_case_proposal_date = forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
+    # Business_Case_Proposal_Date = forms.DateField( attrs=({'style': 'width: 33%; display: inline-block;'}), widget=forms.SelectDateWidget)
     sponsor = forms.CharField(widget=forms.TextInput(attrs={'title':"id_sponsor","id":"id_sponsor",'size':'10','maxlength':'200'} ))
     manager = forms.CharField(widget=forms.TextInput(attrs={'title':"id_manager","id":"id_manager",'size':'60','maxlength':'200'} ))
     internal_stakeholder = forms.CharField(widget=forms.TextInput(attrs={'title':"id_internal","id":"id_internal",'size':'60','maxlength':'200'} ))

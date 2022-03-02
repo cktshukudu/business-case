@@ -1,11 +1,47 @@
+{% load static %}
+{% load bootstrap_icons %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <title>{% block title %}Business Case {% endblock %}</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'main.css' %}" type="tex/css">
+
+<title>{% block title %}Business Case {% endblock %}</title>
 </head>
 <body>
+  <br>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/btamplate/"><img height="100px" src="{% static 'logo.jpg' %}" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"> {% bs_icon 'house-fill' color='black' size='1.5em'  %}  Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> {% bs_icon 'people-fill' color='black' size='1.5em'  %} About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> {% bs_icon 'briefcase-fill' color='black' size='1.5em'  %} Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> {% bs_icon 'telephone-plus-fill' color='black' size='1.5em'  %} Contact Us</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-light">
+          <li><a href="/btamplate/signup/">Register</a></li>
+        </ul> 
+    </div>
+  </nav>
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-8">
