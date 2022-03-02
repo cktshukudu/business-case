@@ -5,6 +5,8 @@
 {% block title %} Create New Template {% endblock %}
 
 {% block content %}
+<form method="post" novalidate>
+    {% csrf_token %}
 <div class="shadow p-4 mb-5 bg-body rounded">
     <h4  style="text-align:center"><strong>Business Case Template</strong></h4>
     <div class="row justify-content-center align-items-center pt-3">
@@ -66,5 +68,6 @@
         {{ form.impact|as_crispy_field }}
         <button class="btn btn-outline-success" type="submit"> {% bs_icon 'check' color='black' size='1.5em'  %}  Complete </button>
     </div>
+    </form>
     </div>
 {% endblock %}

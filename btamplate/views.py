@@ -1,6 +1,7 @@
+from urllib import request
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from .forms import CreateNewList
+from .forms import createForm
 from .forms import RegisterForm
 from .forms import LoginForm
 
@@ -23,6 +24,18 @@ def login(request):
     return render(request, 'btamplate/login.html', {'form': form})
 
 
+def createTemplate(request):
+    if request.method == 'POST':
+        form = createForm(request.POST)
+        if form.is_valid():
+            pass 
+    else: 
+        form = createForm()
+    return render(request, 'btamplate/createTemplate.html', {'form': form})
+
+   
+    
+
 
 def index(response):
     return render(response, "btamplate/base.html", {})
@@ -30,13 +43,6 @@ def index(response):
 def main(response):
     return render(response, "btamplate/main.html", {})
 
-def createTemplate(response):
-    if response.method == "POST":
-        form = CreateNewList(response.POST)
-        # return HttpResponseRedirect('update/')
-             
-    else:
-        form = CreateNewList()
-    return render(response, "btamplate/createTemplate.html", {"form":form})
+
 
     
