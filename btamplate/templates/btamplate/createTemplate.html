@@ -19,35 +19,32 @@
     <hr class="mt-0 mb-4">
     <div class="form-group col-md-6 mb-0">
     {{ form.sponsor|as_crispy_field }}
-        </div>
-           <div class="form-group col-md-6 mb-0">
-        {{ form.manager|as_crispy_field }}
-            </div>
+    </div>
+     <div class="form-group col-md-6 mb-0">
+    {{ form.manager|as_crispy_field }}
+    </div>
     <div class="form-group col-md-6 mb-0">
-            {{ form.internal_stakeholder|as_crispy_field }}
-            </div>
+    {{ form.internal_stakeholder|as_crispy_field }}
+    </div>
     <div class="form-group col-md-6 mb-0">
-                {{ form.external_stakeholder|as_crispy_field }}
-                </div>
+    {{ form.external_stakeholder|as_crispy_field }}
+    </div>
     <div class="form-group col-md-12 mb-0">
         <hr class="mt-0 mb-4">
-        {{ form.Need_for_the_project|as_crispy_field }}
-        </div>
+    {{ form.Need_for_the_project|as_crispy_field }}
+     </div>
     <div class="form-group col-md-12 mb-0">
-        {{ form.Alignment_with_Business_Priorities|as_crispy_field }}
-            </div>
+    {{ form.Alignment_with_Business_Priorities|as_crispy_field }}
+    </div>
     <div class="form-group col-md-12 mb-0">
-        {{ form.Proposed_Solution_or_Methodology|as_crispy_field }}
-         </div>
+    {{ form.Proposed_Solution_or_Methodology|as_crispy_field }}
+    </div>
     <div class="form-group col-md-6 mb-0">
-        {{ form.Indicative_Risk_Level_of_the_Project|as_crispy_field }}
-         </div>
+    {{ form.Indicative_Risk_Level_of_the_Project|as_crispy_field }}
+    </div>
     <div class="form-group col-md-6 mb-0">
-        {{ form.Proposed_Start_Date|as_crispy_field }}
-             </div>
-    <div class="form-group col-md-6 mb-0">
-        {{ form.Proposed_Start_Date|as_crispy_field }}
-        </div>
+    {{ form.Proposed_Start_Date|as_crispy_field }}
+    </div>
     <div class="form-group col-md-6 mb-0">
          {{ form.Overall_Project_Timeframe|as_crispy_field }}
         </div>
@@ -68,6 +65,7 @@
         {{ form.impact|as_crispy_field }}
         <button class="btn btn-outline-success" type="submit"> {% bs_icon 'check' color='black' size='1.5em'  %}  Complete </button>
     </div>
+    <h1>{{Project_name}}</h1>
     </form>
     </div>
 {% endblock %}
