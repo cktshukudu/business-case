@@ -67,5 +67,8 @@ def main(response):
 def update(response):
     return render(response, "btamplate/update.html", {})
 
+def about_us(response):
+    return render(response, "btamplate/about_us.html", {})
+
 
     
