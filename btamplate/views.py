@@ -13,14 +13,14 @@ def signup(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Hi {username}, your account was created successfully')
-            return redirect('signup')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'btamplate/signup.html', {'form': form})
 
 @login_required()
 def profile(request):
-    return render(request, 'btamplate/update.html')
+    return render(request, 'btamplate/createTemplate.html')
 
 def createTemplate(request):
     if request.method == 'POST':
