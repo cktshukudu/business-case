@@ -1,30 +1,26 @@
-from urllib import request
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import createForm
-from .forms import RegisterForm
-from .forms import LoginForm
-from django.urls import reverse
+from .forms import UserRegisterForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 
 def signup(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
-            pass 
-    else: 
-        form = RegisterForm()
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Hi {username}, your account was created successfully')
+            return redirect('signup')
+    else:
+        form = UserRegisterForm()
     return render(request, 'btamplate/signup.html', {'form': form})
 
-
-def login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            pass
-    else: 
-        form = LoginForm()
-    return render(request, 'btamplate/login.html', {'form': form})
-
+@login_required()
+def profile(request):
+    return render(request, 'btamplate/update.html')
 
 def createTemplate(request):
     if request.method == 'POST':

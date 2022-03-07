@@ -1,17 +1,18 @@
 from django import forms
 from django.forms.widgets import NumberInput
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
-class RegisterForm(forms.Form):
-    company_email_address = forms.EmailField()
-    phone_number = forms.CharField(label='Phone')
-    company_number = forms.CharField()
-    office_adress = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput())
-    confirm_password = forms.CharField(widget=forms.PasswordInput())
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField()
 
-class LoginForm(forms.Form):
-    company_number = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput())
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+
+# class LoginForm(forms.Form):
+#     company_number = forms.CharField()
+#     password = forms.CharField(widget=forms.PasswordInput())
 
 class createForm(forms.Form):
     Project_name = forms.CharField(max_length=200)

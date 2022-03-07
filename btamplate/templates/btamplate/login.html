@@ -9,25 +9,20 @@
 </body>
 </html>
 {% load crispy_forms_tags %}
-<form method="post" novalidate>
-  {% csrf_token %}
-<div class="container">
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <h1 class="mt-2">Business Case</h1>
-        <hr class="mt-0 mb-4">
 {% block content %}
-<div class="shadow p-4 mb-5 bg-body rounded">
-<h4  style="text-align:center"><strong>Login</strong></h4>
-<div class="row justify-content-center align-items-center pt-3">
-<div class="form-group col-md-8 mb-0">
-{{ form.company_number|as_crispy_field }}
-</div>
-<div class="form-group col-md-8 mb-0">
-{{ form.password|as_crispy_field }}
-<button class="btn btn-outline-success" type="submit">Sign In</button><br><p><br>Don't have an account?<a href="/btamplate/signup/">Sign Up</a></p>
-</div>
-</form>
-</div>
-</div>
-{% endblock %}
+    <div class="container" style="margin-top: 30px;">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+          <legend class="border-bottom mb-4" style="color: white;">Sign In Now</legend>
+          {{ form|crispy }}
+      </fieldset>
+      <div class="form-group" id="signup-button">
+          <button class="btn ">Sign In</button>
+      </div>
+      <div class="form-group">
+          <small class="text-muted ml-3" >Don't have an account yet? <a href="">Sign Up Today</a></small>
+      </div>
+    </form>
+    </div>
+{% endblock %}</title>
