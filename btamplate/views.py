@@ -44,15 +44,10 @@ def createTemplate(request):
             Approximate_costs_of_the_Project = form.cleaned_data['Approximate_costs_of_the_Project']
             estimate = form.cleaned_data[' estimate']
             impact = form.cleaned_data['impact']
-
-            print(Project_name,Business_case_proposal_date,sponsor,manager,internal_stakeholder,
-            external_stakeholder,Need_for_the_project,Alignment_with_Business_Priorities,Proposed_Solution_or_Methodology 
-            ,Impacted_Business_Function_or_Area,Indicative_Risk_Level_of_the_Project,Proposed_Start_Date,Overall_Project_Timeframe
-            ,Estimated_completion_Date,Location_of_Project_Implementation,Approximate_costs_of_the_Project, estimate
-            ,impact)
+            return redirect('createTemplate')  
     else: 
         form = createForm()
-    return render(request, 'btamplate/createTemplate.html', {'form': form})
+    return render(request, 'btamplate/update.html', {'form': form})
 
 def index(response):
     return render(response, "btamplate/base.html", {})
