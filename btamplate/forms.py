@@ -15,6 +15,7 @@ class UserRegisterForm(UserCreationForm):
 #     password = forms.CharField(widget=forms.PasswordInput())
 
 class createForm(forms.Form):
+    logo = forms.ImageField()
     Project_name = forms.CharField(max_length=200)
     Business_case_proposal_date = forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
     sponsor = forms.CharField(widget=forms.TextInput(attrs={'title':"id_sponsor","id":"id_sponsor",'size':'10','maxlength':'200'} ))

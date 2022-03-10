@@ -24,8 +24,9 @@ def profile(request):
 
 def createTemplate(request):
     if request.method == 'POST':
-        form = createForm(request.POST)
+        form = createForm(request.POST, request.FILES)
         if form.is_valid():
+            logo = form.cleaned_data['logo']
             Project_name = form.cleaned_data['Project_name']
             Business_case_proposal_date  = form.cleaned_data['Business_case_proposal_date ']
             sponsor = form.cleaned_data['sponsor']
@@ -44,10 +45,10 @@ def createTemplate(request):
             Approximate_costs_of_the_Project = form.cleaned_data['Approximate_costs_of_the_Project']
             estimate = form.cleaned_data[' estimate']
             impact = form.cleaned_data['impact']
-            return redirect('createTemplate')  
+            return redirect('update')  
     else: 
         form = createForm()
-    return render(request, 'btamplate/update.html', {'form': form})
+    return render(request, 'btamplate/createTemplate.html', {'form': form})
 
 def index(response):
     return render(response, "btamplate/base.html", {})
