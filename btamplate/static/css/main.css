@@ -9,3 +9,8 @@ font-size: large;
     box-shadow: inset;
     border: 10px 10px;
 }
+.btn {
+    box-shadow: inset;
+    border-radius: 10%;
+    color: aqua;
+}
