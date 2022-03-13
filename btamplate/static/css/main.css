@@ -1,3 +1,16 @@
 body{
-    background-color:#ffff;
+    background-color: lightgray;
+}
+.mb-0 {
+font-family: Arial, Helvetica, sans-serif;
+font-size: large;
+}
+.container {
+    box-shadow: inset;
+    border: 10px 10px;
+}
+.btn {
+    box-shadow: inset;
+    border-radius: 10%;
+    color: aqua;
 }

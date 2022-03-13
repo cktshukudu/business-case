@@ -12,7 +12,17 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
+<<<<<<< HEAD
 class createForm(forms.ModelForm):
+=======
+# class LoginForm(forms.Form):
+#     company_number = forms.CharField()
+#     password = forms.CharField(widget=forms.PasswordInput())
+
+
+class createForm(forms.Form):
+    Project_name = forms.CharField(max_length=200)
+>>>>>>> 3c5cd6fb78417cb07130249337b3da1c8847dbc5
     Business_case_proposal_date = forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
     Proposed_Start_Date = forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
     Overall_Project_Timeframe = forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
