@@ -4,15 +4,11 @@
 
       {% block content %}
       <div class="shadow p-4 mb-5 bg-body rounded">
-            <p  style="text-align:center" style="color: green;"><strong>Register</strong></p>
             <div class="container" style="margin-bottom: 10px;">
             <form action="" method="POST">
               {% csrf_token %}
               <fieldset class="form-group">
-<<<<<<< HEAD
-=======
                   <legend class="border-bottom mb-4" style="color: black;">Join Now</legend>
->>>>>>> 3c5cd6fb78417cb07130249337b3da1c8847dbc5
                   {{ form|crispy }}
               </fieldset>
               <div class="form-group" id="signup-button">

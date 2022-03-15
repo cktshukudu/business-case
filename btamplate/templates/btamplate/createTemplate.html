@@ -7,65 +7,82 @@
 {% block content %}
 <form method="POST" action="" >
     {% csrf_token %}
-<div class="shadow p-4 mb-5 bg-body rounded">
+<div class="shadow-intensity-lg p-4 mb-5 bg-body rounded">
     <h4  style="text-align:center"><strong>Business Case Template</strong></h4>
     <div class="row justify-content-center align-items-center pt-3">
     <div class="form-group col-md-12 mb-0">
-    {{ form.logo|as_crispy_field }}  
+    <label for="">Company Logo</label>
+    <input type="file" class="form-control-file" id="logo" name="logo">
     </div>     
     <div class="form-group col-md-6 mb-0">
-    {{ form.Project_name|as_crispy_field }}
+    <label for="">Project Name</label>
+    <input type="text" class="form-control" id="Project_name" name="Project_name">
     </div>
     <div class="form-group col-md-6 mb-0">
-    {{ form.Business_case_proposal_date|as_crispy_field }}
+     <label class="control-label" for="date">Business Case Proposal Date</label>
+    <input class="form-control" id="Business_Case_Proposal_Date" name="Business_Case_Proposal_Date" type="date"/>
     </div>
     <hr class="mt-0 mb-4">
     <div class="form-group col-md-6 mb-0">
-    {{ form.sponsor|as_crispy_field }}
+    <label for="">Sponsor</label>
+    <input type="text" class="form-control" id="sponsor" name="sponsor">
     </div>
      <div class="form-group col-md-6 mb-0">
-    {{ form.manager|as_crispy_field }}
+        <label for="">Manager</label>
+        <input type="text" class="form-control" id="manager" name="manager">
     </div>
     <div class="form-group col-md-6 mb-0">
-    {{ form.internal_stakeholder|as_crispy_field }}
+        <label for="">Internal Stakeholder</label>
+        <input type="text" class="form-control" id="internal_stakeholder" name="internal_stakeholder">
     </div>
     <div class="form-group col-md-6 mb-0">
-    {{ form.external_stakeholder|as_crispy_field }}
+    <label for="">External Stakeholder</label>
+    <input type="text" class="form-control" id="external_stakeholder" name="external_stakeholder">
     </div>
     <div class="form-group col-md-12 mb-0">
-        <hr class="mt-0 mb-4">
-    {{ form.Need_for_the_project|as_crispy_field }}
+        <label for="">Need For The Project</label>
+        <input type="text" class="form-control" id="Need_for_the_project" name="Need_for_the_project">
      </div>
     <div class="form-group col-md-12 mb-0">
-    {{ form.Alignment_with_Business_Priorities|as_crispy_field }}
+    <label for="">Alignment with Business Priorities</label>
+    <input type="text" class="form-control" id="Alignment_with_Business_Priorities" name="Alignment_with_Business_Priorities">
     </div>
     <div class="form-group col-md-12 mb-0">
-    {{ form.Proposed_Solution_or_Methodology|as_crispy_field }}
+        <label for="">Proposed Solution or Methodology</label>
+        <input type="text" class="form-control" id="Proposed_Solution_or_Methodology" name="Proposed_Solution_or_Methodology">
     </div>
     <div class="form-group col-md-6 mb-0">
-    {{ form.Indicative_Risk_Level_of_the_Project|as_crispy_field }}
+        <label for="">Indicative Risk Level of the Project</label>
+        <input type="text" class="form-control" id="Indicative_Risk_Level_of_the_Project" name="Indicative_Risk_Level_of_the_Project">
     </div>
     <div class="form-group col-md-6 mb-0">
-    {{ form.Proposed_Start_Date|as_crispy_field }}
+     <label class="control-label" for="date">Proposed Start Date</label>
+    <input class="form-control" id="Proposed_Start_Date" name="Proposed_Start_Date" type="date"/>
     </div>
     <div class="form-group col-md-6 mb-0">
-     {{ form.Overall_Project_Timeframe|as_crispy_field }}
+        <label class="control-label" for="date">Overall Project Timeframe</label>
+        <input class="form-control" id="Overall_Project_Timeframe" name="Overall_Project_Timeframe"  type="date"/>
     </div>
     <div class="form-group col-md-6 mb-0">
-    {{ form.Estimated_completion_Date|as_crispy_field }}
+        <label class="control-label" for="date">Estimated completion Date</label>
+        <input class="form-control" id="Estimated_completion_Date" name="Estimated_completion_Date" type="date"/>
     </div>
     <div class="form-group col-md-6 mb-0">
-    {{ form.Location_of_Project_Implementation|as_crispy_field }}
+        <label for="">Location of Project Implementation</label>
+        <input type="text" class="form-control" id="Location_of_Project_Implementation" name="Location_of_Project_Implementation">
     </div>
     <div class="form-group col-md-12 mb-0">
-        <hr class="mt-0 mb-4">
-     {{ form.Approximate_costs_of_the_Project|as_crispy_field }}
+        <label for="">Approximate costs of the Project</label>
+        <input type="text" class="form-control" id="Approximate_costs_of_the_Project" name="Approximate_costs_of_the_Project">
     </div>
     <div class="form-group col-md-12 mb-0">
-    {{ form.Estimate_Benefits_Financial_or_Non_Financial|as_crispy_field }}
+        <label for="">Estimate Benefits Financial or Non Financial</label>
+        <input type="text" class="form-control" id="Estimate_Benefits_Financial_or_Non_Financial" name="Estimate_Benefits_Financial_or_Non_Financial">
     </div>
     <div class="form-group col-md-12 mb-0">
-    {{ form.Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial|as_crispy_field }}
+        <label for="">Impact or Risks of doing nothing Financial or Non Financial</label>
+        <input type="text" class="form-control" id="Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial" name="Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial">
+        <br>
         <button class="btn btn-outline-success" type="submit"> {% bs_icon 'check' color='black' size='1.5em'  %}  Complete </button>
     </div>
     <h1>{{Project_name}}</h1>

@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'solutions',
         'USER': 'root',
-        'PASSWORD': '800531Mosima.',
+        'PASSWORD': 'Number@123',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -144,6 +144,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT=os.path.join(BASE_DIR,"/static/")
-
+MEDIA_URL = '/images/'
 LOGIN_REDIRECT_URL = 'createTemplate'
 LOGIN_URL = 'login'
