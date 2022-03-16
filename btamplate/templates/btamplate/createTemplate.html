@@ -7,12 +7,12 @@
 {% block content %}
 <form method="POST" action="" >
     {% csrf_token %}
-<div class="shadow-intensity-lg p-4 mb-5 bg-body rounded">
+<div class="shadow p-4 mb-5 bg-body rounded">
     <h4  style="text-align:center"><strong>Business Case Template</strong></h4>
     <div class="row justify-content-center align-items-center pt-3">
     <div class="form-group col-md-12 mb-0">
     <label for="">Company Logo</label>
-    <input type="file" class="form-control-file" id="logo" name="logo">
+    <input type="file" class="form-control-file" id="company_logo" name="company_logo">
     </div>     
     <div class="form-group col-md-6 mb-0">
     <label for="">Project Name</label>
@@ -20,7 +20,7 @@
     </div>
     <div class="form-group col-md-6 mb-0">
      <label class="control-label" for="date">Business Case Proposal Date</label>
-    <input class="form-control" id="Business_Case_Proposal_Date" name="Business_Case_Proposal_Date" type="date"/>
+    <input class="form-control" id="Business_Case_Proposal_Date" name="Business_Case_Proposal_Date" placeholder="MM/DD/YYYY" type="text"/>
     </div>
     <hr class="mt-0 mb-4">
     <div class="form-group col-md-6 mb-0">
@@ -52,20 +52,24 @@
         <input type="text" class="form-control" id="Proposed_Solution_or_Methodology" name="Proposed_Solution_or_Methodology">
     </div>
     <div class="form-group col-md-6 mb-0">
+        <label for="">Impacted_Business_Function_or_Area</label>
+        <input type="text" class="form-control" id="Impacted_Business_Function_or_Area" name="Impacted_Business_Function_or_Area">
+    </div>
+    <div class="form-group col-md-6 mb-0">
         <label for="">Indicative Risk Level of the Project</label>
         <input type="text" class="form-control" id="Indicative_Risk_Level_of_the_Project" name="Indicative_Risk_Level_of_the_Project">
     </div>
     <div class="form-group col-md-6 mb-0">
      <label class="control-label" for="date">Proposed Start Date</label>
-    <input class="form-control" id="Proposed_Start_Date" name="Proposed_Start_Date" type="date"/>
+    <input class="form-control" id="Proposed_Start_Date" name="Proposed_Start_Date" placeholder="MM/DD/YYYY" type="text"/>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label class="control-label" for="date">Overall Project Timeframe</label>
-        <input class="form-control" id="Overall_Project_Timeframe" name="Overall_Project_Timeframe"  type="date"/>
+        <input class="form-control" id="Overall_Project_Timeframe" name="Overall_Project_Timeframe"  type="text"/>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label class="control-label" for="date">Estimated completion Date</label>
-        <input class="form-control" id="Estimated_completion_Date" name="Estimated_completion_Date" type="date"/>
+        <input class="form-control" id="Estimated_completion_Date" name="Estimated_completion_Date" placeholder="MM/DD/YYYY" type="text"/>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label for="">Location of Project Implementation</label>

@@ -11,4 +11,5 @@ urlpatterns = [
     path('login/', auth_view.LoginView.as_view(template_name='btamplate/login.html'), name="login"),
     path('<int:id>/', views.update, name='update'),
     path('about_us/', views.about_us, name='about_us'),
+    path('image/', views.image, name='image'),
 ]
