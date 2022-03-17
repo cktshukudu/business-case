@@ -1,84 +1,136 @@
 {% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap_icons %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static '/css/main.css' %}">
+<style>
+h1{
+  font-size: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width:65%;
+  table-layout: fixed;
+}
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #000;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #fff, #fff);
+  background: linear-gradient(to right, #fff, #fff);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 20px;
+}
+</style>
   </head>
 <body>
-    
+  <div class="shadow p-4 mb-5 bg-body rounded">
+    <h4  style="text-align:center"><strong>Business Case</strong></h4>
+    <div class="row justify-content-center align-items-center pt-3">
+    <section>
+        <p style="text-align:center;"><img src="{{user_form.company_logo.url}}" alt="image" width="150px"></p>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td>Project Name:</td>
+                <td>{{user_form.Project_name}}</td>
+              </tr>
+              <tr>
+                <td>Business Case Proposal Date:</td>
+                <td>{{user_form.Business_case_proposal_date}}</td>
+              </tr>
+              <tr>
+                <td>Sponsor:</td>
+                <td>{{user_form.sponsor}}</td>
+              </tr>
+              <tr>
+                <td>Manager:</td>
+                <td>{{user_form.manager}}</td>
+              </tr>
+              <tr>
+                <td>Internal Stakeholder:</td>
+                <td>{{user_form.internal_stakeholder}}</td>
+              </tr>
+              <tr>
+                <td>External Stakeholder:</td>
+                <td>{{user_form.external_stakeholder}}</td>
+              </tr>
+              <tr>
+                <td>Need For The Project:</td>
+                <td>{{user_form.Need_for_the_project}}</td>
+              </tr>
+              <tr>
+                <td>Alignment With Business Priorities:</td>
+                <td>{{user_form.Alignment_with_Business_Priorities}}</td>
+              </tr>
+              <tr>
+                <td>Proposed Solution or Methodology:</td>
+                <td>{{user_form.Proposed_Solution_or_Methodology}}</td>
+              </tr>
+              <tr>
+                <td>Impacted Business Function or Area:</td>
+                <td>{{user_form.Impacted_Business_Function_or_Area}}</td>
+              </tr>
+              <tr>
+                <td>Indicative Risk Level of the Project:</td>
+                <td>{{user_form.Indicative_Risk_Level_of_the_Project}}</td>
+              </tr>
+              <tr>
+                <td>Proposed Start Date:</td>
+                <td>{{user_form.Proposed_Start_Date}}</td>
+              </tr>
+              <tr>
+                <td>Overall Project Timeframe:</td>
+                <td>{{user_form.Overall_Project_Timeframe}}</td>
+              </tr>
+              <tr>
+                <td>Estimated Completion Date:</td>
+                <td>{{user_form.Estimated_completion_Date}}</td>
+              </tr>
+              <tr>
+                <td>Location of Project Implementation:</td>
+                <td>{{user_form.Location_of_Project_Implementation}}</td>
+              </tr>
+              <tr>
+                <td>Approximate costs of the Project:</td>
+                <td>{{user_form.Approximate_costs_of_the_Project}}</td>
+              </tr>
+              <tr>
+                <td>Estimate Benefits(Financial or Non-Financial):</td>
+                <td>{{user_form.Estimate_Benefits_Financial_or_Non_Financial}}</td>
+              </tr>
+              <tr>
+                <td>Impact/Risks of doing nothing(Financial or Non-Financial):</td>
+                <td>{{user_form.Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub"> <button class="btn btn-outline-success" type="submit">Download</button></div>
+      </section>
+     </div>
 </body>
 </html>
-{% load crispy_forms_tags %}
-<div class="container">
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <h1 class="mt-2">Preview Template</h1>
-        <hr class="mt-0 mb-4">
-{% block content %}
-<div class="shadow p-4 mb-5 bg-body rounded">
-<div class="row justify-content-center align-items-center pt-3">
-------*******------------------
-<img src="{{user_form.company_logo.url}}" alt="image" width="100px">
-<div class="form-group col-md-12 mb-0">
-<P>Project Name:{{user_form.Project_name}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Business Case Proposal Date:{{user_form.Business_case_proposal_date}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Sponsor:{{user_form.sponsor}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Manager:{{user_form.manager}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Internal Stakeholder:{{user_form.internal_stakeholder}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>External Stakeholder:{{form.external_stakeholder}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Need For The Project:{{user_form.Need_for_the_project}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Alignment With Business Priorities:{{form.Alignment_with_Business_Priorities}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Proposed Solution or Methodology:{{user_form.Proposed_Solution_or_Methodology}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Impacted Business Function or Area:{{user_form.Impacted_Business_Function_or_Area}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Indicative Risk Level of the Project:{{user_form.Indicative_Risk_Level_of_the_Project}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Proposed Start Date:{{user_form.Proposed_Start_Date}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Overall Project Timeframe:{{user_form.Overall_Project_Timeframe}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Estimated Completion Date:{{user_form.Estimated_completion_Date}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Location of Project Implementation:{{user_form.Location_of_Project_Implementation}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Approximate costs of the Project:{{user_form.Approximate_costs_of_the_Project}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Estimate Benefits(Financial or Non-Financial):{{user_form.Estimate_Benefits_Financial_or_Non_Financial}}</P>
-</div>
-<div class="form-group col-md-12 mb-0">
-<P>Impact/Risks of doing nothing(Financial or Non-Financial):{{user_form.Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial}}</P>
-<button class="btn btn-outline-success" type="submit"> Pdf </button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-{% endblock %}

@@ -5,9 +5,12 @@ from .forms import createForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Form
-from django.template import loader
-import pdfkit
+from django.http import FileResponse
 import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+
 
 
 def signup(request):
@@ -71,23 +74,59 @@ def index(request):
 def main(request):
     return render(request, "btamplate/main.html", {})
 
-def update(request, id):
-    user_form = Form.objects.get(pk=id)
-    template = loader.get_template("btamplate/update.html")
-    html = template.render({'user_form':user_form})
-    option={
-        'page-size':'Letter',
-        'encoding':'UTF-8'
-    }
-    pdf = pdfkit.from_string(html,False,option)
-    response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = "attachments"
-    return response
-    # return render(request, "btamplate/update.html",{'user_form':user_form})
+def update(request):
+    user_form = Form.objects.all()
+    return render(request, "btamplate/update.html",{'user_form':user_form})
 
 def about_us(request):
     return render(request, "btamplate/about_us.html", {})
 
 def image(request):
-    user_form = Form.objects.all
-    return render(request, "btamplate/image.html", {'user_form':user_form})
+
+    buf = io.BytesIO()
+    
+    c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+    textob = c.beginText()
+    textob.setTextOrigin(inch, inch)
+    textob.setFont("Helvetica", 14)
+    
+
+    # lines = [
+    #     "This is line 1",
+    #     "this is line 2",
+    # ]
+    user_form = Form.objects.all()
+    
+
+    lines = []
+
+    for form in user_form:
+        lines.append(form.Project_name)
+        lines.append(form.Business_case_proposal_date)
+        lines.append(form.sponsor)
+        lines.append(form.manager)
+        lines.append(form.internal_stakeholder)
+        lines.append(form.external_stakeholder)
+        lines.append(form.Need_for_the_project)
+        lines.append(form.Alignment_with_Business_Priorities)
+        lines.append(form.Proposed_Solution_or_Methodology)
+        lines.append(form.Impacted_Business_Function_or_Area)
+        lines.append(form.Indicative_Risk_Level_of_the_Project)
+        lines.append(form.Proposed_Start_Date)
+        lines.append(form.Overall_Project_Timeframe)
+        lines.append(form.Estimated_completion_Date)
+        lines.append(form.Location_of_Project_Implementation)
+        lines.append(form.Approximate_costs_of_the_Project)
+        lines.append(form.Estimate_Benefits_Financial_or_Non_Financial)
+        lines.append(form.Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial)
+        lines.append("*******")
+
+    for line in lines:
+        textob.textLine(line)
+
+    c.drawText(textob) 
+    c.showPage()
+    c.save()
+    buf.seek(0)   
+
+    return FileResponse(buf, as_attachment=True, filename='Business_Case.pdf')
