@@ -1,95 +1,145 @@
-{% extends 'btamplate/base.html'%}
 
 {% load crispy_forms_tags %}
 {% load bootstrap_icons %}
-{% block title %} Create New Template {% endblock %}
-
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <title>Business Case</title>
+    <style>
+.navbar {
+  margin-bottom: 100px;
+  padding: 30px;
+  width: 100%;
+  border-bottom: 2px solid  #42a5f5;
+  overflow: auto;
+}
+.Template{
+  margin: auto;
+  width: 50%;
+  border: 1px solid #90CAF9;
+  padding: 10px;
+}
+.footer {
+  overflow: auto;
+  width: 100%;
+  margin-top: 300px;
+  border-bottom: 2px solid  #42a5f5;
+  color: white;
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <p align="right">Hello!{{user.username}}, Welcome to @Solutions!</p>
+        <a class="active" href="/btamplate/update/">{% bs_icon 'eye-fill' color='black' size='1.5em'  %} View Template</a>
+</div>
 {% block content %}
+<div class="Template">
 <form method="POST" action="" >
     {% csrf_token %}
-<div class="shadow p-4 mb-5 bg-body rounded">
     <h4  style="text-align:center"><strong>Business Case Template</strong></h4>
     <div class="row justify-content-center align-items-center pt-3">
     <div class="form-group col-md-12 mb-0">
     <label for="">Company Logo</label>
-    <input type="file" class="form-control-file" id="company_logo" name="company_logo">
+    <input type="file" class="form-control-file" id="company_logo" name="company_logo" required>
     </div>     
     <div class="form-group col-md-6 mb-0">
     <label for="">Project Name</label>
-    <input type="text" class="form-control" id="Project_name" name="Project_name">
+    <input type="text" class="form-control" id="Project_name" name="Project_name" required>
     </div>
     <div class="form-group col-md-6 mb-0">
      <label class="control-label" for="date">Business Case Proposal Date</label>
-    <input class="form-control" id="Business_Case_Proposal_Date" name="Business_Case_Proposal_Date" placeholder="MM/DD/YYYY" type="text"/>
+    <input class="form-control" id="Business_Case_Proposal_Date" name="Business_Case_Proposal_Date" placeholder="MM/DD/YYYY" type="text" required/>
     </div>
     <hr class="mt-0 mb-4">
     <div class="form-group col-md-6 mb-0">
     <label for="">Sponsor</label>
-    <input type="text" class="form-control" id="sponsor" name="sponsor">
+    <input type="text" class="form-control" id="sponsor" name="sponsor" required>
     </div>
      <div class="form-group col-md-6 mb-0">
         <label for="">Manager</label>
-        <input type="text" class="form-control" id="manager" name="manager">
+        <input type="text" class="form-control" id="manager" name="manager" required>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label for="">Internal Stakeholder</label>
-        <input type="text" class="form-control" id="internal_stakeholder" name="internal_stakeholder">
+        <input type="text" class="form-control" id="internal_stakeholder" name="internal_stakeholder" required>
     </div>
     <div class="form-group col-md-6 mb-0">
     <label for="">External Stakeholder</label>
-    <input type="text" class="form-control" id="external_stakeholder" name="external_stakeholder">
+    <input type="text" class="form-control" id="external_stakeholder" name="external_stakeholder" required>
     </div>
     <div class="form-group col-md-12 mb-0">
         <label for="">Need For The Project</label>
-        <input type="text" class="form-control" id="Need_for_the_project" name="Need_for_the_project">
+        <input type="text" class="form-control" id="Need_for_the_project" name="Need_for_the_project" required>
      </div>
     <div class="form-group col-md-12 mb-0">
     <label for="">Alignment with Business Priorities</label>
-    <input type="text" class="form-control" id="Alignment_with_Business_Priorities" name="Alignment_with_Business_Priorities">
+    <input type="text" class="form-control" id="Alignment_with_Business_Priorities" name="Alignment_with_Business_Priorities" required>
     </div>
     <div class="form-group col-md-12 mb-0">
         <label for="">Proposed Solution or Methodology</label>
-        <input type="text" class="form-control" id="Proposed_Solution_or_Methodology" name="Proposed_Solution_or_Methodology">
+        <input type="text" class="form-control" id="Proposed_Solution_or_Methodology" name="Proposed_Solution_or_Methodology" required>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label for="">Impacted_Business_Function_or_Area</label>
-        <input type="text" class="form-control" id="Impacted_Business_Function_or_Area" name="Impacted_Business_Function_or_Area">
+        <input type="text" class="form-control" id="Impacted_Business_Function_or_Area" name="Impacted_Business_Function_or_Area" required>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label for="">Indicative Risk Level of the Project</label>
-        <input type="text" class="form-control" id="Indicative_Risk_Level_of_the_Project" name="Indicative_Risk_Level_of_the_Project">
+        <input type="text" class="form-control" id="Indicative_Risk_Level_of_the_Project" name="Indicative_Risk_Level_of_the_Project" required>
     </div>
     <div class="form-group col-md-6 mb-0">
      <label class="control-label" for="date">Proposed Start Date</label>
-    <input class="form-control" id="Proposed_Start_Date" name="Proposed_Start_Date" placeholder="MM/DD/YYYY" type="text"/>
+    <input class="form-control" id="Proposed_Start_Date" name="Proposed_Start_Date" placeholder="MM/DD/YYYY" type="text" required/>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label class="control-label" for="date">Overall Project Timeframe</label>
-        <input class="form-control" id="Overall_Project_Timeframe" name="Overall_Project_Timeframe"  type="text"/>
+        <input class="form-control" id="Overall_Project_Timeframe" name="Overall_Project_Timeframe"  type="text" required />
     </div>
     <div class="form-group col-md-6 mb-0">
         <label class="control-label" for="date">Estimated completion Date</label>
-        <input class="form-control" id="Estimated_completion_Date" name="Estimated_completion_Date" placeholder="MM/DD/YYYY" type="text"/>
+        <input class="form-control" id="Estimated_completion_Date" name="Estimated_completion_Date" placeholder="MM/DD/YYYY" type="text" required/>
     </div>
     <div class="form-group col-md-6 mb-0">
         <label for="">Location of Project Implementation</label>
-        <input type="text" class="form-control" id="Location_of_Project_Implementation" name="Location_of_Project_Implementation">
+        <input type="text" class="form-control" id="Location_of_Project_Implementation" name="Location_of_Project_Implementation" required>
     </div>
     <div class="form-group col-md-12 mb-0">
         <label for="">Approximate costs of the Project</label>
-        <input type="text" class="form-control" id="Approximate_costs_of_the_Project" name="Approximate_costs_of_the_Project">
+        <input type="text" class="form-control" id="Approximate_costs_of_the_Project" name="Approximate_costs_of_the_Project" required>
     </div>
     <div class="form-group col-md-12 mb-0">
         <label for="">Estimate Benefits Financial or Non Financial</label>
-        <input type="text" class="form-control" id="Estimate_Benefits_Financial_or_Non_Financial" name="Estimate_Benefits_Financial_or_Non_Financial">
+        <input type="text" class="form-control" id="Estimate_Benefits_Financial_or_Non_Financial" name="Estimate_Benefits_Financial_or_Non_Financial" required>
     </div>
     <div class="form-group col-md-12 mb-0">
         <label for="">Impact or Risks of doing nothing Financial or Non Financial</label>
-        <input type="text" class="form-control" id="Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial" name="Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial">
+        <input type="text" class="form-control" id="Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial" name="Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial" required>
         <br>
         <button class="btn btn-outline-success" type="submit"> {% bs_icon 'check' color='black' size='1.5em'  %}  Complete </button>
     </div>
-    <h1>{{Project_name}}</h1>
     </form>
     </div>
+    </div>
 {% endblock %}
+<div class="container">
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{message.tags}}">{{message}}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+<div class="footer">
+    <p>@Solutions</p>
+  </div>
+</body>
+</html>

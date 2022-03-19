@@ -62,6 +62,7 @@ def createTemplate(request):
                  Approximate_costs_of_the_Project=Approximate_costs_of_the_Project,
                  Estimate_Benefits_Financial_or_Non_Financial=Estimate_Benefits_Financial_or_Non_Financial,Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial=Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial
                  )
+            messages.success(request, f'Template was created successfully')
             form.save()
             return redirect('createTemplate')
     else:
@@ -91,10 +92,6 @@ def image(request):
     textob.setFont("Helvetica", 14)
     
 
-    # lines = [
-    #     "This is line 1",
-    #     "this is line 2",
-    # ]
     user_form = Form.objects.all()
     
 
