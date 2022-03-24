@@ -42,6 +42,13 @@
         <p align="right">Hello!{{user.username}}, Welcome to @Solutions!</p>
         <a class="active" href="/btamplate/update/">{% bs_icon 'eye-fill' color='black' size='1.5em'  %} View Template</a>
 </div>
+<div class="container">
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{message.tags}}">{{message}}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
 {% block content %}
 <div class="Template">
 <form method="POST" action="" >
@@ -58,7 +65,7 @@
     </div>
     <div class="form-group col-md-6 mb-0">
      <label class="control-label" for="date">Business Case Proposal Date</label>
-    <input class="form-control" id="Business_Case_Proposal_Date" name="Business_Case_Proposal_Date" placeholder="MM/DD/YYYY" type="text" required/>
+    <input class="form-control" id="Business_case_proposal_date" name="Business_case_proposal_date(" placeholder="MM/DD/YYYY" type="text" required/>
     </div>
     <hr class="mt-0 mb-4">
     <div class="form-group col-md-6 mb-0">
@@ -131,13 +138,6 @@
     </div>
     </div>
 {% endblock %}
-<div class="container">
-    {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-{{message.tags}}">{{message}}</div>
-    {% endfor %}
-  {% endif %}
-  </div>
 <div class="footer">
     <p>@Solutions</p>
   </div>

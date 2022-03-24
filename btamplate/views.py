@@ -7,9 +7,13 @@ from django.contrib.auth.decorators import login_required
 from .models import Form
 from django.http import FileResponse
 import io
+
+from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT, TA_JUSTIFY
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, ParagraphAndImage
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 
 
 
@@ -19,7 +23,7 @@ def signup(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Hi {username}, your account was created successfully')
+            # messages.success(request, f'Hi {username}, your account was created successfully')
             return redirect('login')
     else:
         form = UserRegisterForm()
@@ -90,6 +94,8 @@ def image(request):
     textob = c.beginText()
     textob.setTextOrigin(inch, inch)
     textob.setFont("Helvetica", 14)
+
+    
     
 
     user_form = Form.objects.all()
@@ -98,6 +104,7 @@ def image(request):
     lines = []
 
     for form in user_form:
+        lines.append(form.company_logo.url)
         lines.append(form.Project_name)
         lines.append(form.Business_case_proposal_date)
         lines.append(form.sponsor)

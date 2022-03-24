@@ -30,9 +30,9 @@ td{
   text-align: left;
   vertical-align:middle;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 15px;
   color: #000;
-  border-bottom: solid 1px rgba(255,255,255,0.1);
+  border-bottom: solid 1px #000
 }
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 body{
@@ -68,12 +68,11 @@ section{
         <div class="tbl-content">
           <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-              <tr>
-                <td><img src="{{user_form.company_logo.url}}" alt="image" width="150px"></td>
-              </tr>
-              <tr>
               {% for user_form in user_form %}
               <tr>
+                {% if user_form.company_logo %}
+                <td><img src="{{ user_form.company_logo.url }}" alt="image" width="150px"></td>
+                {% endif %}
               </tr>
               <tr>
                 <td>Project Name:</td>
