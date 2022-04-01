@@ -27,17 +27,18 @@ html {
 	height: 100%;
 }
 body {
-	color: #888888;
+	background-color: #E3F2FD;
 	font-size: 15px;
 	font-family: "Poppins", sans-serif;
 	height: 100%;
 	overflow-x: hidden;
+	color: black
 }
 a {
 	text-decoration: none !important;
 }
 a:hover {
-	color: #8eecf5 !important;
+	color: gray !important;
 }
 img {
 	max-width: 100%;
@@ -85,31 +86,31 @@ h6 {
 }
 .banner {
 	background:url(images/bg1.jpg) no-repeat 0% 0% / 100% 100%;
-	color:#ffffff;
+	color: black;
 	text-align: center;
 	width: 100%;
 }
 .banner-overlay {
-	background:linear-gradient(to bottom, rgba(47, 121, 171, 0) 0%, #90CAF9 100%);
+	background:linear-gradient(to bottom, rgba(47, 121, 171, 0) 0%, lightgray 100%);
 	padding:220px 0px 170px;
 }
 .banner h1 {
-	color:#ffffff;
+	color: gray;
 }
 .banner p {
 	margin:15px auto 15px;
 	max-width: 670px
 }
 .banner-btn {
-	background: #ab2f52;
+	background: gray;
 	padding: 12px 45px;
 	font-size: 15px;
 	border-radius: 30px;
 	margin-top: 30px;
 }
 .banner-btn:hover {
-	background: #ffffff;
-	color:#ab2f52;
+	background: #0000;
+	color:#42A5F5;
 }
 .section-padding {
 	padding: 100px 0px;
@@ -118,7 +119,7 @@ h6 {
 	padding-bottom: 80px;
 }
 .section-title h3 {
-	color: #ab2f52;
+	color: #0000;
 	text-transform: uppercase;
 	font-weight: 300;
 	margin-bottom: 22px;
@@ -169,7 +170,7 @@ h6 {
 	margin-bottom: 5px;
 }
 .sub-title-paragraph h5 {
-	color:#ffaf53;
+	color: lightgray;
 }
 .sub-title-paragraph p {
 	padding-top: 20px;
@@ -178,27 +179,28 @@ h6 {
 	line-height: 25px;
 }
 .anchor-btn {
-	background: #ffaf53;
+	background: #E3F2FD;
 	padding: 10px 20px;
-	color: #ffffff !important;
+	color: black !important;
 	border-radius: 3px;
 	margin-top: 30px;
+	border: 1px solid;
 }
 .bg-grey {
-	background-color: #fafafa;
+	background-color: lightgray;
 }
 .bg-white {
-	background: #ffffff;
+	background: lightgray;
 }
 .service-box {
 	padding: 50px;
 	border-radius: 4px;
-	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+	-webkit-box-shadow: 0px 5px 35px 0px rgba(167, 165, 238, 0.15);
+	box-shadow: 0px 5px 35px 0px rgba(155, 154, 199, 0.15);
 }
 .service-box .icon i {
 	font-size: 40px;
-	color: #ffaf53;
+	color: lightblue;
 }
 .icon-text h4 {
 	font-size: 16px;
@@ -248,21 +250,22 @@ h6 {
 .bttn {
 	position: relative;
 	cursor: pointer;
-	color: #fff;
+	color: gray;
 	-webkit-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-	background: #ab2f52;
+	background-color: #ab2f52;
 	padding: 12px 45px;
 	font-size: 15px;
 	border-radius: 30px;
 	margin-top: 30px;
-	border: none;
+	border: 1px solid black;
 }
 @media all and (max-width:991px) {
 .navbar .navbar-collapse {
+	background-color: #E3F2FD;
 	overflow: auto;
 	background: rgba(0, 0, 0, 0.72);
-	color: #fff !important;
+	color: gray !important;
 	text-align: center;
 	padding: 10px 0;
 }
@@ -289,9 +292,7 @@ h6 {
         <li class="nav-item active">
           <a class="nav-link" href="/btamplate/"> {% bs_icon 'house-fill' color='black' size='1.5em'  %}  Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/btamplate/about_us/"> {% bs_icon 'people-fill' color='black' size='1.5em'  %} About Us</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="#"> {% bs_icon 'briefcase-fill' color='black' size='1.5em'  %} Work</a>
         </li>
@@ -319,7 +320,7 @@ h6 {
             <h1 class="text-capitalize">Best Template for Business Case</h1>
             <p>We help SMEs to create business cases.</p>
            
-            <a href="#" class="btn btn-outline-success">Learn More</a> </div>
+            <a href="#" class="btn-btn-outline-success">Learn More</a> </div>
         </div>
       </div>
       <div class="about-us section-padding" data-scroll-index='1'>
