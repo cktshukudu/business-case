@@ -1,5 +1,5 @@
-from .models import Form
+from .models import Formi
 from django.contrib import admin
 
 # Register your models here.
-admin.site.register(Form)
+admin.site.register(Formi)

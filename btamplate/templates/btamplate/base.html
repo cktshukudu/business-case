@@ -9,274 +9,20 @@
 
 
 <link rel="stylesheet" href="{% static '/css/main.css' %}">
-
-<title>{% block title %}Business Case {% endblock %}</title>
-
 <style>
-
-* {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	text-decoration: none !important;
-	list-style: none !important;
-	outline: none !important;
-	margin: 0;
-	padding: 0;
-}
-html {
-	height: 100%;
-}
-body {
-	color: #888888;
-	font-size: 15px;
-	font-family: "Poppins", sans-serif;
-	height: 100%;
-	overflow-x: hidden;
-}
-a {
-	text-decoration: none !important;
-}
-a:hover {
-	color: #8eecf5 !important;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
-}
-span, a {
-	display: inline-block;
-	color: inherit;
-}
-h1, h2, h3, h4, h5, h6 {
-	color: #151515;
-	font-weight: 600;
-	font-family: "Open Sans", sans-serif;
-	margin: 0;
-}
-p {
-	line-height: 1.6;
-	font-weight: 400;
-	margin: 0;
-}
-h1 {
-	font-size: 40px;
-}
-h2 {
-	font-size: 35px;
-}
-h3 {
-	font-size: 30px;
-}
-h4 {
-	font-size: 26px;
-}
-h5 {
-	font-size: 15px;
-}
-h6 {
+.footer-copy {
+	border-top: 2px dotted #84ACCE;
+	color: #000;
 	font-size: 13px;
-}
-h4 {
-	font-weight: 400;
-}
-h6 {
-	font-weight: bold;
-}
-.banner {
-	background:url(images/bg1.jpg) no-repeat 0% 0% / 100% 100%;
-	color:#ffffff;
 	text-align: center;
-	width: 100%;
+	padding:70px 0px;
 }
-.banner-overlay {
-	background:linear-gradient(to bottom, rgba(47, 121, 171, 0) 0%, #90CAF9 100%);
-	padding:220px 0px 170px;
-}
-.banner h1 {
-	color:#ffffff;
-}
-.banner p {
-	margin:15px auto 15px;
-	max-width: 670px
-}
-.banner-btn {
-	background: #ab2f52;
-	padding: 12px 45px;
-	font-size: 15px;
-	border-radius: 30px;
-	margin-top: 30px;
-}
-.banner-btn:hover {
-	background: #ffffff;
-	color:#ab2f52;
-}
-.section-padding {
-	padding: 100px 0px;
-}
-.section-title {
-	padding-bottom: 80px;
-}
-.section-title h3 {
-	color: #ab2f52;
-	text-transform: uppercase;
-	font-weight: 300;
-	margin-bottom: 22px;
-}
-.section-title p {
-	width: 60%;
-	margin: 15px auto 20px;
-}
-.section-title-line {
-	background: #ececec;
-	content: "";
-	height: 1px;
-	position: absolute;
-	left: calc(50% - 87px);
-	width: 175px;
-}
-.section-title-line:after {
-	background: #ab2f52;
-	bottom: -1px;
-	content: "";
-	height: 2px;
-	left: calc(50% - 22px);
-	position: absolute;
-	width: 45px;
-}
-.mb-30 {
-	margin-bottom: 30px !important;
-}
-.mb-50 {
-	margin-bottom: 50px !important;
-}
-.mb-100 {
-	margin-bottom: 100px !important;
-}
-.mt-50 {
-	margin-top: 50px !important;
-}
-.mt-100 {
-	margin-bottom: 100px !important;
-}
-.pd-lt-10 {
-	padding-left:10px;
-}
-.no-padding {
-	padding: 0px !important;
-}
-.sub-title-paragraph h4 {
-	margin-bottom: 5px;
-}
-.sub-title-paragraph h5 {
-	color:#ffaf53;
-}
-.sub-title-paragraph p {
-	padding-top: 20px;
-	font-weight: 300;
-	font-size: 14px;
-	line-height: 25px;
-}
-.anchor-btn {
-	background: #ffaf53;
-	padding: 10px 20px;
-	color: #ffffff !important;
-	border-radius: 3px;
-	margin-top: 30px;
-}
-.bg-grey {
-	background-color: #fafafa;
-}
-.bg-white {
-	background: #ffffff;
-}
-.service-box {
-	padding: 50px;
-	border-radius: 4px;
-	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-}
-.service-box .icon i {
-	font-size: 40px;
-	color: #ffaf53;
-}
-.icon-text h4 {
-	font-size: 16px;
-	font-weight: 600;
-	margin: 10px 0px;
-	position: relative;
-	padding-bottom: 14px;
-}
-.icon-text h4:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 60px;
-	height: 2px;
-	background-color: #bcbcbc;
-	-webkit-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-	left: calc(50% - 30px);
-}
-.icon-text p {
-	line-height: 25px;
-	font-weight: 300;
-}
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-	background: #ab2f52 !important;
-}
-.info-box {
-	position:relative;
-	padding-bottom:30px;
-}
-.info-box .icon {
-	display:inline-block;
-	width: 30px;
-}
-.info-box .icon i {
-	font-size: 20px;
-	color: #ab2f52;
-}
-.info-box .content {
-	display:inline-block;
-	margin-left:10px;
-}
-.info-box .content h4 {
-	font-size: 20px;
-}
-.bttn {
-	position: relative;
-	cursor: pointer;
-	color: #fff;
-	-webkit-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-	background: #ab2f52;
-	padding: 12px 45px;
-	font-size: 15px;
-	border-radius: 30px;
-	margin-top: 30px;
-	border: none;
-}
-@media all and (max-width:991px) {
-.navbar .navbar-collapse {
-	overflow: auto;
-	background: rgba(0, 0, 0, 0.72);
-	color: #fff !important;
-	text-align: center;
-	padding: 10px 0;
-}
-@media all and (max-width:768px) {
-.nav-scroll .navbar-brand img, .navbar-brand img{
-	transform: scale(0.75) !important;
-	-webkit-transform: scale(0.75) !important;
-}
+
+
 </style>
-
-
+<title>{% block title %}Business Case {% endblock %}</title>
 </head>
 <body>
-  <br>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <a class="navbar-brand" href="/btamplate/"><img height="100px" src="{% static 'images/logo.jpg' %}" alt=""></a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -290,7 +36,7 @@ h6 {
           <a class="nav-link" href="/btamplate/"> {% bs_icon 'house-fill' color='black' size='1.5em'  %}  Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/btamplate/about_us/"> {% bs_icon 'people-fill' color='black' size='1.5em'  %} About Us</a>
+          <a class="nav-link" href="#"> {% bs_icon 'people-fill' color='black' size='1.5em'  %} About Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"> {% bs_icon 'briefcase-fill' color='black' size='1.5em'  %} Work</a>
@@ -335,7 +81,7 @@ h6 {
                   <h4>Motivation of this App.</h4>
                   <p>This project was motivated by noticing that most SMEs are struggling and they do not have a proper structure or templates of some sort to follow. Some businesses do create good business cases but half way through the project they fail to stick to it due to changes that happen as the project is progressing. Some stop going back to the business case as soon as they start gaining the benefits even though the project is not fully complete and that leads to the project not being a success at the end of the day.</p>
                 </div>
-                <a href="#" class="anchor-btn">Learn more <i class="fas fa-arrow-right pd-lt-10"></i></a> </div>
+                 </div>
             </div>
             <div class="col-md-6 mb-50">
               <div class="section-imge"> <img height="100px" src="{% static 'images/business_case.png' %}" alt="" class="img-responsive"/> </div>
@@ -347,7 +93,7 @@ h6 {
         <div class="container">
           <div class="row">
             <div class="col-md-12 section-title text-center">
-              <h3>We Are Best At Our Service</h3>
+              <h3>Our Company</h3>
               <p>We provide you with the best digital business case template.</p>
               <span class="section-title-line"></span> </div>
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
@@ -384,10 +130,19 @@ h6 {
           </div>
         </div>
       </div>   
-    {% endblock %}
   </div>
   </div>
   </div>
   
+  <footer class="footer-copy">
+    <div class="container-fluid">
+       <div class="row">
+   <div class="col-md-12">
+   <p> &copy; 2022 All rights reserved. @Solutions</a></p>
+    </div>
+</div>
+    </div>
+    </footer>
+  {% endblock %}
 </body>
 </html>
