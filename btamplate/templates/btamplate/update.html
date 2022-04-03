@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{% static '/css/main.css' %}">
   <title>{% block title %}{% bs_icon 'house-fill' color='black' size='1.5em'  %}{% endblock %}</title>
 <style>
+<<<<<<< HEAD
 .container {
   margin: auto;
     width: 50%;
@@ -72,16 +73,74 @@ table h4 {
 }
 .schedule-offset {
   color: #000;
+=======
+  body {
+    background-color: #90CAF9;
+  }
+h1{
+  font-size: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table {
+  width:65%;
+  table-layout: fixed;
+  border: 1px solid black;
+}
+.tbl-content{
+  height:400px;
+  overflow-x:auto;
+  margin-top: 0px;
+  /* width: 100%; */
+}
+td{
+  width:65%;
+  table-layout: fixed;
+  border: 1px solid black;
+  padding: 15px;
+  margin: auto;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 15px;
+  color: #000;
+  /* border-bottom: solid 1px #000 */
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  /* background: -webkit-linear-gradient(left, #fff, #fff); */
+  /* background: linear-gradient(to right, #fff, #fff); */
+  font-family: 'Arial', sans-serif;
+  background-color: #E3F2FD;
+>>>>>>> 897d1073c9739e208d010f004ad4becd987408d9
 }
 section{
   margin: 20px;
 }
+<<<<<<< HEAD
 .footer-copy {
 	border-top: 2px dotted #84ACCE;
 	color: #000;
 	font-size: 13px;
 	text-align: center;
 	padding:70px 0px;
+=======
+.Business{
+  margin: auto;
+  width: 50%;
+  border: 1px solid gray;
+  padding: 10px;
+}
+.navbar {
+  margin-bottom: 100px;
+  width: 100%;
+  border-bottom: 2px solid  gray;
+  overflow: auto;
+>>>>>>> 897d1073c9739e208d010f004ad4becd987408d9
 }
 
 
@@ -92,6 +151,7 @@ section{
     <div class="navbar">
         <a class="active" href="/btamplate/">{% bs_icon 'house-fill' color='black' size='1.5em'  %} Logout</a>
       </div>
+<<<<<<< HEAD
     <section class="row">
       <div class="container">
         <table>
@@ -210,6 +270,98 @@ section{
         </table>
 
 		 {% endfor %}
+=======
+  <div class="Business">
+    <h4  style="text-align:center"><strong>Business Case Preview</strong></h4>
+    <section>
+        <div class="tbl-content">
+          <table>
+            <tbody>
+              {% for user_form in user_form %}
+              <tr>
+                {% if user_form.company_logo %}
+                <td><img src="{{ user_form.company_logo.url }}" alt="image" width="150px"></td>
+                {% endif %}
+              </tr>
+              <tr>
+                <td>Project Name:</td>
+                <td>{{user_form.Project_name}}</td>
+              </tr>
+              <tr>
+                <td>Business Case Proposal Date:</td>
+                <td>{{user_form.Business_case_proposal_date}}</td>
+              </tr>
+              <tr>
+                <td>Sponsor:</td>
+                <td>{{user_form.sponsor}}</td>
+              </tr>
+              <tr>
+                <td>Manager:</td>
+                <td>{{user_form.manager}}</td>
+              </tr>
+              <tr>
+                <td>Internal Stakeholder:</td>
+                <td>{{user_form.internal_stakeholder}}</td>
+              </tr>
+              <tr>
+                <td>External Stakeholder:</td>
+                <td>{{user_form.external_stakeholder}}</td>
+              </tr>
+              <tr>
+                <td>Need For The Project:</td>
+                <td>{{user_form.Need_for_the_project}}</td>
+              </tr>
+              <tr>
+                <td>Alignment With Business Priorities:</td>
+                <td>{{user_form.Alignment_with_Business_Priorities}}</td>
+              </tr>
+              <tr>
+                <td>Proposed Solution or Methodology:</td>
+                <td>{{user_form.Proposed_Solution_or_Methodology}}</td>
+              </tr>
+              <tr>
+                <td>Impacted Business Function or Area:</td>
+                <td>{{user_form.Impacted_Business_Function_or_Area}}</td>
+              </tr>
+              <tr>
+                <td>Indicative Risk Level of the Project:</td>
+                <td>{{user_form.Indicative_Risk_Level_of_the_Project}}</td>
+              </tr>
+              <tr>
+                <td>Proposed Start Date:</td>
+                <td>{{user_form.Proposed_Start_Date}}</td>
+              </tr>
+              <tr>
+                <td>Overall Project Timeframe:</td>
+                <td>{{user_form.Overall_Project_Timeframe}}</td>
+              </tr>
+              <tr>
+                <td>Estimated Completion Date:</td>
+                <td>{{user_form.Estimated_completion_Date}}</td>
+              </tr>
+              <tr>
+                <td>Location of Project Implementation:</td>
+                <td>{{user_form.Location_of_Project_Implementation}}</td>
+              </tr>
+              <tr>
+                <td>Approximate costs of the Project:</td>
+                <td>{{user_form.Approximate_costs_of_the_Project}}</td>
+              </tr>
+              <tr>
+                <td>Estimate Benefits(Financial or Non-Financial):</td>
+                <td>{{user_form.Estimate_Benefits_Financial_or_Non_Financial}}</td>
+              </tr>
+              <tr>
+                <td>Impact/Risks of doing nothing(Financial or Non-Financial):</td>
+                <td>{{user_form.Impact_or_Risks_of_doing_nothing_Financial_or_Non_Financial}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <a class="nav-link" href="/btamplate/image/">Download</a>
+      </section>
+>>>>>>> 897d1073c9739e208d010f004ad4becd987408d9
      </div>
     </section>
     <footer class="footer-copy">
