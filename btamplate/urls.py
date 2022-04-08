@@ -16,5 +16,5 @@ urlpatterns = [
     path('test/<object_id>/',render_pdf_view, name='test-view'),
     path('delete_template/<object_id>/',views.delete_template, name='delete_template'),
     path('update_template/<object_id>/',views.update_template, name='update_template'),
-    path('email/', views.email, name='email'),
+    path('email/<object_id>/', views.email, name='email'),
 ]

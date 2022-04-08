@@ -134,13 +134,13 @@ def render_pdf_view(request, object_id):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def email(request):
+def email(request, object_id):
     if request.method == "POST":
-        user_form = Formi.objects.all()
+        user_form = Formi.objects.get(pk = object_id)
         to = request.POST.get('toemail')
         content = request.POST.get('content')
-        print(user_form,to,content)
-        html_content = render_to_string("btamplate/image.html",{'title':'test email','content':content,'user_form':user_form})
+        # print(user_form,to,content)
+        html_content = render_to_string("btamplate/email_template.html",{'title':'test email','content':content,'user_form':user_form})
         text_content = strip_tags(html_content)
         email = EmailMultiAlternatives(
             "Business Case",
@@ -148,7 +148,8 @@ def email(request):
             settings.EMAIL_HOST_USER,
             [to]
         )
-        email.attach_alternative(html_content,"text/html")
+        email.attach_alternative(html_content,"/")
+        email.attach('Business.pdf', html_content, 'application/pdf')
         email.send()
         return render(
             request,

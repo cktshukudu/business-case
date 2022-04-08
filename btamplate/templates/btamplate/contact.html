@@ -1,5 +1,5 @@
 {% load static %}
-{% block title %}@Solutions{%endblock %}
+{% block title %}Business Case {% endblock %}
 {% block meta_description %}Generate Template{% endblock %}
 {% block content %}
 <!DOCTYPE html>
@@ -8,38 +8,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %}Business Case {% endblock %}</title>
 </head>
 <body>
-    
-
-  <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-          <h2 class="title">Contact</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="breadcumb--con">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Contact</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Breadcrumb Area End ***** -->
-  
-  <!-- ***** Contact Area Start ***** -->
   {% if message_name %}
     <center>
       <h2>Thanks {{ message_name }}!</h2>
@@ -59,23 +30,16 @@
 
             <h5>Phone</h5>
             <p></p>
-
-            
-
             <h5>Email</h5>
             <p class="mb-0"></p>
           </div>
         </div>
-
-        <!-- Contact Form -->
         <div class="col-12 col-md-8">
           <div class="contact-form">
-            <!-- Section Heading -->
             <div class="section-heading">
               <h2>Get In Touch</h2>
               <div class="line"></div>
             </div>
-            <!-- Form -->
             <form action="" method="post">
               {% csrf_token %}
               <div class="row">
@@ -100,7 +64,16 @@
     </div>
   </section>
   {% endif %}
-  <!-- ***** Contact Area End ***** -->
+</section>
+<footer class="footer-copy">
+  <div class="container-fluid">
+     <div class="row">
+ <div class="col-md-12">
+ <p> &copy; 2022 All rights reserved. @Solutions</a></p>
+  </div>
+</div>
+  </div>
+  </footer>
 
 {% endblock %}
 </body>
