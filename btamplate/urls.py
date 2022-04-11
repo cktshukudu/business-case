@@ -10,7 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('createTemplate/', views.createTemplate, name='createTemplate'),
     path('signup/', views.signup, name='signup'),
-    path('login/', auth_view.LoginView.as_view(template_name='btamplate/login.html'), name="login"),
+    path("login/", views.login_request, name="login"),
     path('update/', views.update, name='update'),
     path('contact/', views.contact, name='contact'), 
     path('test/<object_id>/',render_pdf_view, name='test-view'),

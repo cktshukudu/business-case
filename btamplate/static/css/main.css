@@ -1,33 +1,13 @@
-/
-/* .navbar {
-    margin-bottom: 100px;
-    padding: 30px;
-    width: 100%;
-    border-bottom: 2px solid  #42a5f5;
-    overflow: auto;
-  } */
+
   .Template{
     margin: auto;
     width: 50%;
     border: 1px solid #42a5f5;
     padding: 10px;
   }
-  .login{
-    margin: auto;
-    width: 50%;
-    border: 1px solid #42a5f5;
-    padding: 10px;
-  }
-  .footer {
-    overflow: auto;
-    width: 100%;
-    margin-top: 300px;
-    border-bottom: 2px solid  #42a5f5;
-    color: white;
-    text-align: center;
-  }
+
 .btn-btn-outline-success{
-    /* background-color: bisque; */
+    background-color: #42a5f5;
     color: black;
     border: 1px solid black;
     border-radius: 2px;
@@ -44,13 +24,6 @@
 a {
     color: black;
     font-size: large;
-}
-.footer-copy {
-	border-top: 2px dotted #84ACCE;
-	color: #000;
-	font-size: 13px;
-	text-align: center;
-	padding:7px 0px;
 }
 /* Updade page */
   table {
@@ -113,10 +86,3 @@ a {
   section{
 	margin: 20px;
   }
-  /* .footer-copy {
-	  border-top: 2px dotted #84ACCE;
-	  color: #000;
-	  font-size: 13px;
-	  text-align: center;
-	  padding:7px 0px;
-  } */
