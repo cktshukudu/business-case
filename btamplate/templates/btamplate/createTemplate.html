@@ -24,12 +24,18 @@
 
     }  
        .footer-copy {
-      background: #fafafa;
+        background: #fafafa;
       color: #000;
       font-size: 13px;
       text-align: center;
       padding:30px;
       margin-top: 100px;
+      overflow: auto;
+      bottom: 0px;
+    position: relative;
+    height: 50px;
+    left: 0px;
+    right: 0px;
   }
   
   .Template{
@@ -68,7 +74,7 @@
     {% csrf_token %}
     <h4  style="text-align:center"><strong>Business Case Template</strong></h4>
     <div class="row justify-content-center align-items-center pt-3">   
-      <div class="form-group col-md-6 mb-0">
+      <div class="form-group col-md-6 mb-10">
         <label class="control-label" for="date">Date:</label>
        <input class="form-control" id="pro_date" name="pro_date" placeholder="MM/DD/YYYY" type="text" required/>
        </div>
