@@ -60,7 +60,7 @@ def createTemplate(request):
                 pro_date = request.POST.get("pro_date","")
                 name = request.POST.get("name", "")
                 role = request.POST.get("role", "")
-                logo = request.POST.get("logo", "")
+                logo = request.FILES.get("logo", "")
                 summary = request.POST.get("summary", "")
                 project = request.POST.get("project", "")
                 limitations = request.POST.get("limitations", "")
@@ -85,9 +85,6 @@ def createTemplate(request):
 
 def index(request):
     return render(request, "btamplate/base.html", {})
-
-def main(request):
-    return render(request, "btamplate/main.html", {})
 
 def contact(request):
     if request.method == "POST":

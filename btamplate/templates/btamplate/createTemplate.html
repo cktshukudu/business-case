@@ -1,4 +1,3 @@
-
 {% load crispy_forms_tags %}
 {% load bootstrap_icons %}
 {% load static %}
@@ -58,7 +57,7 @@
 </head>
 <body>
 <div class="header">
-        <p align="right" style="text-align: center;">Hello{{user.username}}, Welcome to @Solutions!</p>
+        <p align="right" style="text-align: center;">Hello {{user.username}}, Welcome to @Solutions!</p>
         <a href="{%url 'btamplate:update'%}"><button class="btn btn-primary">{% bs_icon 'eye-fill' color='black' size='1.5em'  %} View Template</button></a>
 </div>
 <div class="container">
@@ -70,7 +69,7 @@
   </div>
 {% block content %}
 <div class="Template">
-<form method="POST" action="" >
+<form method="POST" action="" enctype="multipart/form-data" >
     {% csrf_token %}
     <h4  style="text-align:center"><strong>Business Case Template</strong></h4>
     <div class="row justify-content-center align-items-center pt-3">   
@@ -88,7 +87,7 @@
         </div>
         <div class="form-group col-md-6 mb-0">
           <label for="">Company Logo:</label>
-          <input type="file" class="form-control-file" id="logo" name="logo" required/>
+          <input type="file" class="form-control-file" id="logo" name="logo" accept="image/*" required/>
           </div>     
         <div class="form-group col-md-12 mb-10">
             <label for="">Executive Summary:</label>

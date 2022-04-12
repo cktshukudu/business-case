@@ -6,7 +6,7 @@ class Formi(models.Model):
     pro_date = models.CharField(max_length=20)
     name = models.CharField(max_length=30)
     role = models.CharField(max_length=30)
-    logo = models.ImageField()
+    logo = models.ImageField(upload_to='media/')
     summary = models.TextField()
     project = models.TextField()
     limitations = models.TextField()

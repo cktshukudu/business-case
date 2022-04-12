@@ -1,4 +1,47 @@
+.header {
+  background: #fff;
+  margin-bottom: 100px;
+  padding: 30px;
+  width: 100%;
+  overflow: auto;
+}
+.login{
+  margin: auto;
+  background: #fafafa;
+  width: 50%;
+  border: 1px solid #42a5f5;
+  padding: 10px;
+}
+.Template{
+  background: #fafafa;
+  margin: auto;
+  width: 50%;
+  border: 1px solid #42a5f5;
+  padding: 10px;
+}
 
+.footer-copy {
+  background: #fafafa;
+    color: #000;
+    font-size: 13px;
+    text-align: center;
+    padding:30px;
+    margin-top: 100px;
+    overflow: auto;
+    bottom: 0px;
+  position: relative;
+  height: 50px;
+  left: 0px;
+  right: 0px;
+}
+body {
+background-color: #E3F2FD;
+font-size: 15px;
+font-family: "Poppins", sans-serif;
+height: 100%;
+overflow-x: hidden;
+
+  }  
 .btn-btn-outline-success{
     background-color: #42a5f5;
     color: black;
