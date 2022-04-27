@@ -18,6 +18,8 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
+from email.mime.image import MIMEImage
+from django.contrib.auth.models import User
 
 
 
@@ -71,7 +73,8 @@ def createTemplate(request):
                 threat = request.POST.get("threat", "")
                 financial = request.POST.get("financial", "")
                 risk = request.POST.get("risk", "")
-
+                print(logo)
+                
                 form = Formi(pro_date=pro_date,name=name,role=role,logo=logo,summary=summary,project=project,
                 limitations=limitations,approach=approach,benefits=benefits,opportunities=opportunities,
                 nobel=nobel,threat=threat,financial=financial,risk=risk)
@@ -153,7 +156,6 @@ def email(request, object_id):
         user_form = Formi.objects.get(pk = object_id)
         to = request.POST.get('toemail')
         content = request.POST.get('content')
-        # print(user_form,to,content)
         html_content = render_to_string("btamplate/email_template.html",{'title':'test email','content':content,'user_form':user_form})
         text_content = strip_tags(html_content)
         email = EmailMultiAlternatives(
@@ -162,8 +164,7 @@ def email(request, object_id):
             settings.EMAIL_HOST_USER,
             [to]
         )
-        email.attach_alternative(html_content,"/")
-        email.attach('Business.pdf', html_content, 'application/pdf')
+        email.attach('Business_Case.pdf', html_content)
         email.send()
         return render(
             request,
